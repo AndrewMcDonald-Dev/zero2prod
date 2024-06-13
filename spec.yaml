@@ -2,7 +2,7 @@ name: zero2prod
 # See https://www.digitalocean.com/docs/app-platform/#regional-availability for the available options
 # You can get region slugs from https://www.digitalocean.com/docs/platform/availability-matrix/
 # `fra` stands for Frankfurt (Germany - EU)
-region: fra
+region: nyc
 services:
   - name: zero2prod
     # Relative to the repository root

@@ -28,6 +28,7 @@ tracing-actix-web = "0.7"
 serde-aux = "4"
 unicode-segmentation = "1.11.0"
 validator = "0.18.1"
+reqwest = {version = "0.12.4", default-features = false, features = ["json", "rustls-tls"]}
 
 [dependencies.sqlx]
 version = "0.7"
@@ -42,8 +43,10 @@ features = [
 ]
 
 [dev-dependencies]
+tokio = { version = "1", features = ["rt", "macros"]}
+wiremock = "0.5"
 fake = "~2.3.0"
 quickcheck = "0.9.2"
 quickcheck_macros = "0.9.1"
 claims = "0.7.1"
-reqwest = "0.12.4"
+serde_json = "1"
