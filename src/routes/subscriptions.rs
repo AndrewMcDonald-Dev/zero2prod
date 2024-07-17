@@ -1,6 +1,4 @@
-use std::fmt::write;
-
-use actix_web::{http::StatusCode, web, HttpResponse, Responder, ResponseError};
+use actix_web::{http::StatusCode, web, HttpResponse, ResponseError};
 use anyhow::Context;
 use chrono::Utc;
 use rand::{distributions::Alphanumeric, thread_rng, Rng};
@@ -175,7 +173,7 @@ pub async fn send_confirmation_email(
         confirmation_link
     );
     email_client
-        .send_email(new_subscriber.email, "Welcome!", plain_body, html_body)
+        .send_email(&new_subscriber.email, "Welcome!", plain_body, html_body)
         .await
 }
 
